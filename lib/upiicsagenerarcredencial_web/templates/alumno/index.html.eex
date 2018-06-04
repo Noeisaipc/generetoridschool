@@ -1,0 +1,44 @@
+<h2>Listing Alumno</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Boleta</th>
+      <th>Password</th>
+      <th>Nombre</th>
+      <th>Appaterno</th>
+      <th>Apmaterno</th>
+      <th>Nivel</th>
+      <th>Creditos</th>
+      <th>Promedio</th>
+      <th>Correo</th>
+      <th>Statusinscripcion</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for alumno <- @alumno do %>
+    <tr>
+      <td><%= alumno.boleta %></td>
+      <td><%= alumno.password %></td>
+      <td><%= alumno.nombre %></td>
+      <td><%= alumno.appaterno %></td>
+      <td><%= alumno.apmaterno %></td>
+      <td><%= alumno.nivel %></td>
+      <td><%= alumno.creditos %></td>
+      <td><%= alumno.promedio %></td>
+      <td><%= alumno.correo %></td>
+      <td><%= alumno.statusinscripcion %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: alumno_path(@conn, :show, alumno), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: alumno_path(@conn, :edit, alumno), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: alumno_path(@conn, :delete, alumno), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Alumno", to: alumno_path(@conn, :new) %></span>

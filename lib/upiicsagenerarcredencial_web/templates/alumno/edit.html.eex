@@ -1,0 +1,5 @@
+<h2>Edit Alumno</h2>
+
+<%= render "form.html", Map.put(assigns, :action, alumno_path(@conn, :update, @alumno)) %>
+
+<span><%= link "Back", to: alumno_path(@conn, :index) %></span>

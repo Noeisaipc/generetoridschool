@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Iciuhcac</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding-left: 200px;
+    padding-right: 200px;
+   
+background-image: url("<%= static_path(@conn, "/images/fondi.png") %>");
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 10px 10px;
+    text-align: center;
+
+}
+
+.header h1 {
+    font-size: 50px;
+
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 15px 0 rgba(0,0,0,0.19);
+border-radius: 8px;
+  background-color: #780F21;
+
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #FBFBFA;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #EAE1DF;
+    color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 0px;
+}
+
+/* Left and right column */
+.column.side {
+    width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 50%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+/* Add a card effect for articles */
+.card {
+border-radius: 8px;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 15px 0 rgba(0,0,0,0.19);
+ background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+ margin-left: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+border-radius: 8px;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 15px 0 rgba(0,0,0,0.19);
+    padding: 0.1px;
+    text-align: left;
+    background: #f1f1f1;
+    margin-top: 20px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn, .middlecolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+ 	padding: 0;
+    }
+}
+
+
+
+/* Ocultar botón radio */
+input[id^="spoiler"]{
+display: none;
+}
+/* Estilo botón clicable */
+input[id^="spoiler"] + label {
+display: block;
+width: 300px;
+margin: 0 auto;
+padding: 5px 5px;
+color: #FFFFFF;
+background: #780F21;
+cursor: pointer;
+}
+/* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+color: #000;
+background: #ccc;
+}
+/* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+width: 90%;
+height: 0;
+overflow: hidden;
+opacity: 0;
+margin: 10px auto 0; 
+}
+/* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler{
+height: auto;
+opacity: 1;
+}
+
+
+
+.containerb {
+ 
+width: 90%;
+  
+margin: 1px; 
+
+}
+
+
+.progressbar {
+  
+margin: 0;
+
+padding: 0;
+  
+counter-reset: step;
+
+}
+
+
+.progressbar li {
+  
+list-style-type: none;
+
+width: 25%;
+float: left;
+
+font-size: 12px;
+
+position: relative;
+
+text-align: center;
+
+text-transform: uppercase;
+
+color: #7d7d7d;
+
+}
+
+
+.progressbar li:before {
+  
+width: 30px;
+height: 30px;
+
+content: counter(step);
+counter-increment: step;
+line-height: 30px;
+border: 2px solid #7d7d7d;
+display: block;
+
+text-align: center;
+
+margin: 0 auto 10px auto;
+ 
+border-radius: 50%;
+background-color: white;
+
+}
+
+
+.progressbar li:after {
+  
+width: 60%;
+height: 2px;
+content: '';
+position: absolute;
+
+background-color: #7d7d7d;
+top: 15px;
+
+left: -50%;
+
+z-index: -1;
+
+}
+
+
+.progressbar li:first-child:after {
+  
+content: none;
+
+}
+
+
+.progressbar li.active {
+  
+color: green;
+
+}
+
+
+.progressbar li.active:before {
+  
+border-color: #55b776;
+
+}
+
+
+.progressbar li.active + li:after {
+  
+background-color: #55b776;
+}
+
+</style>
+
+<body>
+    <div class="topnav">
+        <a <%= link "Inicio", to: page_path(@conn, :index) %></a>
+        <a href="http://www.contenido.ccs.ipn.mx/G-866-2011-E.pdf">Reglamento</a>
+        <a href="15.html">Ayuda</a>
+        <a href="16.html">Recuperar Contraseña</a>
+        <%= if @current_user do %>
+
+            <a href="<%=credential_path(@conn, :index)%>">Reponer Credencial</a>
+            <% else %>
+
+        <% end %>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="column side">
+            <div class="card">
+
+            <%= if @current_user do %>
+                <%= @current_user.nombre %> 
+                <li>
+                <%= link "Cerrar Sesión", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+                </li>
+            <% else %>
+                <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %> <div class="form-group">
+                <h6> Boleta: <br>
+                <%= text_input f, :username, placeholder: "Boleta", class: "form-control" %> </div>
+
+                <div class="form-group">
+                <h6> Contraseña: <br>
+                <%= password_input f, :password, placeholder: "Contraseña", class: "form-control" %>
+                </div>
+                <%= submit "Iniciar Sesión", class: "btn btn-primary" %> <% end %>
+            <% end %>
+            </div>
+        </div>
+
+
+        <div class="column middle">
+        <div class="card">
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+        <main role="main">
+            <%= render @view_module, @view_template, assigns %>
+        </main>
+        </div>
+        </div> <!-- /container -->
+    </div>
+
+    
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<h2>Show Alumno</h2>
+
+<ul>
+
+  <li>
+    <strong>Boleta:</strong>
+    <%= @alumno.boleta %>
+  </li>
+
+  <li>
+    <strong>Password:</strong>
+    <%= @alumno.password %>
+  </li>
+
+  <li>
+    <strong>Nombre:</strong>
+    <%= @alumno.nombre %>
+  </li>
+
+  <li>
+    <strong>Appaterno:</strong>
+    <%= @alumno.appaterno %>
+  </li>
+
+  <li>
+    <strong>Apmaterno:</strong>
+    <%= @alumno.apmaterno %>
+  </li>
+
+  <li>
+    <strong>Nivel:</strong>
+    <%= @alumno.nivel %>
+  </li>
+
+  <li>
+    <strong>Creditos:</strong>
+    <%= @alumno.creditos %>
+  </li>
+
+  <li>
+    <strong>Promedio:</strong>
+    <%= @alumno.promedio %>
+  </li>
+
+  <li>
+    <strong>Correo:</strong>
+    <%= @alumno.correo %>
+  </li>
+
+  <li>
+    <strong>Statusinscripcion:</strong>
+    <%= @alumno.statusinscripcion %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: alumno_path(@conn, :edit, @alumno) %></span>
+<span><%= link "Back", to: alumno_path(@conn, :index) %></span>
